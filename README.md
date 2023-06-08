@@ -1,0 +1,2 @@
+to use the environment on Linux or mac run the following in the terminal ```source env/bin/activate ```
+to use the environment on windows you need to open powershell as administrator and type in the following ```set-executionpolicy RemoteSigned ``` or else the env script can't run. Then run ``` env/scripts/activate.ps1 ``` in the terminal

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Movie Pick</title>
+{% endblock %}
+
+{% block body %}
+<div id="page-title">
+    <h1>Pick a movie for me!</h1>
+</div>
+<div class="get-movies">
+    <form action="{{url_for('movies')}}" method="POST">
+        <div class="input-container"></div>
+            <label for="recommendations">Number of recommendations</label>
+            <input type="number" id="recommendations" name="recommendations" required min="1" max="30" value="15">
+            <br>
+            <br>
+            <label for="genre">Genre:</label>
+            <br>
+            <label for="comedy">Comedy</label>
+            <input type="checkbox" name="comdy" id="comedy">
+            <label for="action">Action</label>
+            <input type="checkbox" name="action" id="action">
+            <label for="romance">Romance</label>
+            <input type="checkbox" name="romance" id="romance">
+            <br>
+            <label for="scifi">Sci fi</label>
+            <input type="checkbox" name="Sci Fi" id="scifi">
+            <input type="checkbox">
+            <input type="checkbox">
+            <br>
+            <br>
+            <label>Actors</label>
+            <br>
+            <textarea name="actor" placeholder="Tom Cruise&#10;Samuel S. Jackson" rows="6" cols="20"></textarea>
+            <br>
+            <br>
+            <label>Directors</label>
+            <br>
+            <textarea name="director" placeholder="Jon Watts&#10;The Rossos" rows="6" cols="20"></textarea>
+            <br>
+            <br>
+            <button type="text" class="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

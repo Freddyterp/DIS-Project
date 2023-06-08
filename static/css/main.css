@@ -1,0 +1,24 @@
+body {
+    background-color: rgba(30, 30, 30, 255);
+    color: rgba(200, 200, 200, 255)
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.get-movies {
+    display: block;
+    text-align: center;
+}
+
+form {
+    background-color: #15172b;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
