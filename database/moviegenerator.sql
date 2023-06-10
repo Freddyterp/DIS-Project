@@ -1,5 +1,5 @@
 DROP SCHEMA IF EXISTS moviegenerator CASCADE;
-CREATE SCHEMA moviegenerator
+CREATE SCHEMA moviegenerator;
 CREATE TABLE Movies(
 	movie_id SERIAL PRIMARY KEY,
 	movie_name text NOT NULL,
@@ -61,46 +61,46 @@ CREATE TABLE MovieGenre(
 );
 
 COPY movies(movie_id, movie_name, year, rating)
-FROM 'C:\\dev\\DIS-project\\database\movies.csv'
+FROM 'C:/dev/DIS-project/database/movies.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY actors(actor_id, actor_name)
-FROM 'C:\\dev\\DIS-project\\database\actors.csv'
+FROM 'C:/dev/DIS-project/database/actors.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY directors(director_id, director_name)
-FROM 'C:\\dev\\DIS-project\\database\directors.csv'
+FROM 'C:/dev/DIS-project/database/directors.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY genre(genre_id, genre)
-FROM 'C:\\dev\\DIS-project\\database\genre.csv'
+FROM 'C:/dev/DIS-project/database/genre.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY StreamingServices(services_id, services_name, services_price)
-FROM 'C:\\dev\\DIS-project\\database\StreamingServices.csv'
+FROM 'C:/dev/DIS-project/database/StreamingServices.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY acted_in(movie_id, actor_id)
-FROM 'C:\\dev\\DIS-project\\database\acted_in.csv'
+FROM 'C:/dev/DIS-project/database/acted_in.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY directed(movie_id, director_id)
-FROM 'C:\\dev\\DIS-project\\database\directed.csv'
+FROM 'C:/dev/DIS-project/database/directed.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY streaming(movie_id, services_id)
-FROM 'C:\\dev\\DIS-project\\database\streaming.csv'
+FROM 'C:C:/dev/DIS-project/database/streaming.csv'
 DELIMITER ','
 CSV HEADER;
 
 COPY moviegenre(movie_id, genre_id)
-FROM 'C:\\dev\\DIS-project\\database\moviegenre.csv'
+FROM 'C:C:/dev/DIS-project/database/moviegenre.csv'
 DELIMITER ','
 CSV HEADER;
