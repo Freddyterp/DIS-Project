@@ -44,7 +44,7 @@ def SQLQuery(data):
                      JOIN directors ON directed.director_id = directors.director_id
                      """
     if not data[1] == None:
-        query += f'WHERE genre.genre = {data[1]} '
+        query += f"WHERE genre.genre = '{data[1]}' "
     if not data[2] == '':
         subquery = ''
         if not data[1] == None:
