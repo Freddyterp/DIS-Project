@@ -28,7 +28,7 @@ CREATE TABLE StreamingServices(
 	services_price real NOT NULL
 );
 
-CREATE TABLE acted_in(
+CREATE TABLE Acted_in(
 	movie_id integer,
 	actor_id integer,
 	FOREIGN KEY(movie_id) REFERENCES Movies(movie_id),
@@ -104,3 +104,52 @@ COPY moviegenre(movie_id, genre_id)
 FROM 'C:\\dev\\DIS-project\\database\moviegenre.csv'
 DELIMITER ','
 CSV HEADER;
+
+
+SELECT movie_name, year, rating
+FROM moviegenerator.Movies;
+
+SELECT movie_name, year, rating, genre
+FROM moviegenerator.Movies
+JOIN moviegenerator.MovieGenre ON Movies.movie_id = MovieGenre.movie_id
+JOIN moviegenerator.Genre ON MovieGenre.genre_id = Genre.genre_id;
+
+SELECT movie_name, year, rating, director_name
+FROM moviegenerator.Movies
+JOIN moviegenerator.Directed ON Movies.movie_id = Directed.movie_id
+JOIN moviegenerator.Directors ON Directed.director_id = Directors.director_id;
+
+SELECT movie_name, year, rating, actor_name
+FROM moviegenerator.Movies
+JOIN moviegenerator.Acted_in ON Movies.movie_id = Acted_in.movie_id
+JOIN moviegenerator.Actors ON Acted_in.actor_id = Actors.actor_id;
+
+SELECT movie_name, year, rating, actor_name, director_name
+FROM moviegenerator.Movies
+JOIN moviegenerator.Acted_in ON Movies.movie_id = Acted_in.movie_id
+JOIN moviegenerator.Actors ON Acted_in.actor_id = Actors.actor_id
+JOIN moviegenerator.Directed ON Movies.movie_id = Directed.movie_id
+JOIN moviegenerator.Directors ON Directed.director_id = Directors.director_id;
+
+SELECT movie_name, year, rating, genre, actor_name
+FROM moviegenerator.Movies
+JOIN moviegenerator.MovieGenre ON Movies.movie_id = MovieGenre.movie_id
+JOIN moviegenerator.Genre ON MovieGenre.genre_id = Genre.genre_id
+JOIN moviegenerator.Acted_in ON Movies.movie_id = Acted_in.movie_id
+JOIN moviegenerator.Actors ON Acted_in.actor_id = Actors.actor_id;
+
+SELECT movie_name, year, rating, director_name, genre
+FROM moviegenerator.Movies
+JOIN moviegenerator.Directed ON Movies.movie_id = Directed.movie_id
+JOIN moviegenerator.Directors ON Directed.director_id = Directors.director_id
+JOIN moviegenerator.MovieGenre ON Movies.movie_id = MovieGenre.movie_id
+JOIN moviegenerator.Genre ON MovieGenre.genre_id = Genre.genre_id;
+
+SELECT movie_name, year, rating, genre, actor_name, director_name
+FROM moviegenerator.Movies
+JOIN moviegenerator.MovieGenre ON Movies.movie_id = MovieGenre.movie_id
+JOIN moviegenerator.Genre ON MovieGenre.genre_id = Genre.genre_id
+JOIN moviegenerator.Acted_in ON Movies.movie_id = Acted_in.movie_id
+JOIN moviegenerator.Actors ON Acted_in.actor_id = Actors.actor_id
+JOIN moviegenerator.Directed ON Movies.movie_id = Directed.movie_id
+JOIN moviegenerator.Directors ON Directed.director_id = Directors.director_id;
