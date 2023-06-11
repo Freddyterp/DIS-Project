@@ -15,6 +15,8 @@
                 <th>Movie Name</th>
                 <th>Year</th>
                 <th>Rating</th>
+                <th>Streaming Service</th>
+                <th>Streaming Service Price</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +25,8 @@
                 <td>{{ movies.movie_name }}</td>
                 <td>{{ movies.year }}</td>
                 <td>{{ movies.rating }}</td>
+                <td>{{ StreamingServices.services_name }}</td>
+                <td>{{ StreamingServices.services_price }}</td>
             </tr>
             {% endfor %}
         </tbody>
